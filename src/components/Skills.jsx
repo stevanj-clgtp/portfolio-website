@@ -87,7 +87,7 @@ const categories = [
     label: 'Analytics & BI',
     icon: BarChart2,
     color: '#a78bfa',
-    tags: ['Power BI', 'SSRS', 'Executive Dashboards', 'KPI Design', 'DAX', 'Data Visualization'],
+    tags: ['Power BI', 'SSRS', 'Executive Dashboards', 'KPI Design', "RLS/OLS", 'DAX', 'Data Visualization'],
   },
   {
     label: 'Orchestration',
