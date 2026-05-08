@@ -51,6 +51,19 @@ const items = [
     bg: 'bg-orange-400/5',
     hoverBorder: 'hover:border-orange-400/35',
   },
+
+  {
+    icon: GraduationCap,
+    type: 'Education',
+    title: 'Java Developer',
+    institution: 'Code By Cometrade',
+    year: null,
+    href: 'https://code.edu.rs/obuke/java-development/',
+    color: 'text-orange-400',
+    border: 'border-orange-400/15',
+    bg: 'bg-orange-400/5',
+    hoverBorder: 'hover:border-orange-400/35',
+  },
 ]
 
 export default function Education() {
