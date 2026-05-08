@@ -15,7 +15,8 @@ const LEVELS = 4
 
 // Edit `years` to adjust each axis — value is derived automatically
 const radarData = [
-  { label: 'Cloud',       years: 6  },
+  { label: 'AWS Cloud',       years: 6.5  },
+  { label: 'Azure Cloud',       years: 2.5  },
   { label: 'Data Eng.',   years: 6 },
   { label: 'ML',          years: 3  },
   { label: 'Analytics',   years: 8 },
@@ -67,9 +68,8 @@ const categories = [
     label: 'AWS Services',
     icon: Cloud,
     color: '#f97316',
-    tags: ['S3', 'Glue', 'Redshift', 'Kinesis', 'Lambda', 'Athena', 'EMR',
-      'Step Functions', 'RDS', 'DynamoDB', 'SageMaker', 'ECS', 'EKS',
-      'CloudFormation', 'IAM', 'CloudWatch', 'SNS / SQS'],
+    tags: ['S3', 'Glue', 'Redshift', 'Kinesis', 'Lambda', 'Athena', 'EMR', 'AWS Cloudwatch', "AWS Amplify",
+      'Step Functions', 'RDS', 'DynamoDB', 'SageMaker', 'ECS', 'EKS','IAM', 'Identity Center', 'CloudWatch', 'SNS / SQS'],
   },
   {
     label: 'Azure',
