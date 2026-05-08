@@ -44,7 +44,7 @@ const items = [
     type: 'Certification',
     title: 'AWS Cloud Practitioner',
     institution: 'Amazon Web Services',
-    year: null,
+    year: 2019,
     href: 'https://www.credly.com/earner/earned/badge/f94dd5fd-3588-4779-a0a9-786277a704f4',
     color: 'text-orange-400',
     border: 'border-orange-400/15',
@@ -55,14 +55,14 @@ const items = [
   {
     icon: GraduationCap,
     type: 'Education',
-    title: 'Java Developer',
+    title: 'Java Development',
     institution: 'Code By Cometrade',
     year: null,
     href: 'https://code.edu.rs/obuke/java-development/',
     color: 'text-orange-400',
     border: 'border-orange-400/15',
     bg: 'bg-orange-400/5',
-    hoverBorder: 'hover:border-orange-400/35',
+    hoverBorder: 'hover:border-red-400/35',
   },
 ]
 
