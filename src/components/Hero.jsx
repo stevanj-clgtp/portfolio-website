@@ -58,10 +58,18 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto mt-6 leading-relaxed"
         >
-          10+ years designing cloud-based data platforms, BI ecosystems, and AI-driven
-          decision engines for high-volume environments. Currently building{' '}
-          <span className="text-cyan-400 font-medium">Cloudlines</span> — an AI-enabled
-          omnichannel data platform.
+          15+ years in the global gambling industry — designing cloud-based data platforms,
+          BI ecosystems, and AI-driven decision engines for high-volume environments.
+          Currently building{' '}
+          <a
+            href="https://cloudlines.rs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors"
+          >
+            Cloudlines
+          </a>{' '}
+          — an AI Agents platform.
         </motion.p>
 
         <motion.div

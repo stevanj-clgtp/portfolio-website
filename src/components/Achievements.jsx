@@ -10,30 +10,31 @@ const categories = [
     border: 'border-cyan-400/20',
     iconColor: 'text-cyan-400',
     items: [
-      'Led migration from on-premise infrastructure to AWS-based Data Lake, enabling scalable analytics, real-time processing, and ML experimentation across sportsbook operations.',
-      'Designed and implemented end-to-end data platform (ingestion → transformation → modeling → consumption) supporting high-volume, real-time betting environments.',
+      'Led migration from on-premise infrastructure to AWS-based Data Lake, enabling scalable analytics, real-time processing, and ML experimentation across Sportsbook, Casino, Virtual Games, and Slot operations.',
+      'Built centralized Sportsbook Data Warehouse & Analytics Platform — unified analytical data structures supporting large-scale reporting, advanced analytics, and AI-driven use cases across trading, risk, and operational teams.',
     ],
   },
   {
     icon: Brain,
-    title: 'ML Modeling',
+    title: 'ML Modeling & Predictive Analytics',
     color: 'from-blue-400/10 to-blue-400/5',
     border: 'border-blue-400/20',
     iconColor: 'text-blue-400',
     items: [
-      'Developed Expected Margin Model by reconstructing historical market states and odds movements, enabling deep pricing analysis and trading performance optimization.',
-      'Designed ML-driven customer segmentation, churn prediction, LTV, and recommendation models to improve personalization and betting optimization.',
+      'Expected Margin Model — reconstructed historical market states and odds movements over time to calculate true sportsbook margin, enabling pricing analysis, trading performance evaluation, and market efficiency insights.',
+      'Predictive personalization suite: Churn Model, LTV Model, and Recommendation Model — ML-driven segmentation and behavioral analysis to support data-driven decisions across trading and marketing.',
     ],
   },
   {
     icon: Zap,
-    title: 'Real-Time Systems & Decision Engines',
+    title: 'Betting Intelligence Modules',
     color: 'from-yellow-400/10 to-yellow-400/5',
     border: 'border-yellow-400/20',
     iconColor: 'text-yellow-400',
     items: [
-      'Designed risk classification system using ~200 behavioral and transactional features to assess customer risk profiles.',
-      'Built pattern detection system for identifying similar betting tickets, improving trading efficiency and risk control.',
+      'Risk Tag Betting Module — behavioral risk classification system calculating customer risk levels using ~200 metrics derived from betting activity and customer behavior.',
+      'Cash Out Betting Module — predictive model calculating optimal ticket cash-out values in real time based on market movement and probability changes.',
+      'Similar Ticket Detection Module — classification system identifying similar betting patterns across tickets to improve risk detection and trading optimization.',
     ],
   },
   {
@@ -43,8 +44,8 @@ const categories = [
     border: 'border-purple-400/20',
     iconColor: 'text-purple-400',
     items: [
-      'Built and led data function, defining data strategy, architecture standards, and operating model for a team of 15.',
-      'Translated business requirements into scalable data products across trading, risk, marketing, and other commercial domains.',
+      'Built and led data function from the ground up — defining data strategy, architecture standards, and operating model for a team of 15 across engineering, analytics, and ML.',
+      'Translated business requirements into scalable data products across trading, risk, marketing, and other commercial domains for Sportsbook, Casino, and Virtual Games verticals.',
     ],
   },
   {
@@ -54,8 +55,8 @@ const categories = [
     border: 'border-green-400/20',
     iconColor: 'text-green-400',
     items: [
-      'Established data governance, security, and compliance frameworks across enterprise data systems.',
-      'Designed disaster recovery and business continuity standards for business-critical data infrastructure.',
+      'Established enterprise data governance, security, and compliance frameworks across all data systems.',
+      'Designed disaster recovery and business continuity standards for business-critical data infrastructure in high-availability betting environments.',
     ],
   },
   {
@@ -65,8 +66,19 @@ const categories = [
     border: 'border-orange-400/20',
     iconColor: 'text-orange-400',
     items: [
-      'Designed and implemented AI products for personalization, recommendation, and operational optimization.',
-      'Building Cloudlines — AI-enabled omnichannel data platform integrating commerce, CRM, and analytics.',
+      'Designed and implemented AI products for personalization, recommendation, and operational optimization using LangGraph and CrewAI agent frameworks.',
+      <>
+        Building{' '}
+        <a
+          href="https://cloudlines.rs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-cyan-400 hover:text-cyan-300 transition-colors"
+        >
+          Cloudlines
+        </a>{' '}
+        — an AI Agents platform with multi-agent orchestration, intelligent data pipelines, and autonomous decision-making workflows.
+      </>,
     ],
   },
 ]
@@ -107,7 +119,7 @@ export default function Achievements() {
                     {cat.items.map((item, j) => (
                       <li key={j} className="flex gap-2 text-xs text-slate-400 leading-relaxed">
                         <span className={`${cat.iconColor} mt-0.5 shrink-0`}>›</span>
-                        {item}
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>

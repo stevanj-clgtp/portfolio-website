@@ -21,21 +21,31 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="md:col-span-2 space-y-4 text-slate-400 leading-relaxed text-[1.05rem]">
               <p>
-                Data and analytics leader with <span className="text-slate-200 font-medium">10+ years</span> of
-                experience designing cloud-based data platforms, BI ecosystems, and decision-support
-                solutions in high-volume environments.
+                Data and analytics leader with{' '}
+                <span className="text-slate-200 font-medium">15+ years in the global gambling industry</span> —
+                spanning sportsbook trading, virtual games management, and data platform architecture
+                across high-volume betting environments.
               </p>
               <p>
                 Strong track record translating business needs into scalable data products, leading
                 platform modernization on{' '}
                 <span className="text-cyan-400 font-medium">AWS and Azure</span>, and establishing
-                governance, security, and operating standards across the entire data lifecycle.
+                governance, security, and operating standards across the entire data lifecycle for
+                Sportsbook, Casino, Virtual Games, and Slot operations.
               </p>
               <p>
-                Currently supporting high-volume betting environments processing{' '}
+                Currently supporting environments processing{' '}
                 <span className="text-slate-200 font-medium">billions of events daily</span>, while
-                simultaneously building <span className="text-cyan-400 font-medium">Cloudlines</span> — an
-                AI-enabled omnichannel data platform integrating commerce, CRM, and analytics.
+                building{' '}
+                <a
+                  href="https://cloudlines.rs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors"
+                >
+                  Cloudlines
+                </a>{' '}
+                — an AI Agents platform.
               </p>
             </div>
 
@@ -64,7 +74,7 @@ function SectionLabel({ children }) {
 }
 
 const stats = [
-  { value: '10+', label: 'Years of experience' },
+  { value: '15+', label: 'Years in gambling industry' },
   { value: '3', label: 'AWS certifications' },
   { value: '15+', label: 'Team members led' },
   { value: '1B+', label: 'Daily events processed' },

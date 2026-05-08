@@ -3,36 +3,62 @@ import { useInView } from '../hooks/useInView'
 
 const categories = [
   {
-    label: 'Cloud & Data Platform',
-    tags: ['AWS', 'Azure', 'Distributed Architectures', 'Data Lakes', 'Data Warehouses'],
+    label: 'AWS Services',
+    tags: [
+      'S3', 'Glue', 'Redshift', 'Kinesis', 'Lambda', 'Athena',
+      'EMR', 'Step Functions', 'RDS', 'DynamoDB', 'SageMaker',
+      'ECS', 'EKS', 'CloudFormation', 'IAM', 'CloudWatch', 'SNS / SQS',
+    ],
+  },
+  {
+    label: 'Azure',
+    tags: ['Azure Data Factory', 'Synapse Analytics', 'Blob Storage', 'Azure SQL', 'Azure DevOps'],
   },
   {
     label: 'Data Engineering',
-    tags: ['Python', 'SQL', 'ETL / ELT', 'dbt', 'Data Modeling'],
+    tags: ['Python', 'SQL', 'ETL / ELT', 'dbt', 'Data Modeling', 'Apache Spark', 'Kafka'],
   },
   {
-    label: 'Analytics',
-    tags: ['Power BI', 'SSRS', 'Executive Dashboards', 'KPI Design'],
+    label: 'Analytics & BI',
+    tags: ['Power BI', 'SSRS', 'Executive Dashboards', 'KPI Design', 'DAX', 'Data Visualization'],
   },
   {
     label: 'Orchestration',
-    tags: ['Apache Airflow', 'Batch Processing', 'Real-Time Processing'],
+    tags: ['Apache Airflow', 'Batch Processing', 'Real-Time Processing', 'Event-Driven Pipelines'],
   },
   {
-    label: 'Infrastructure',
-    tags: ['Terraform', 'CI/CD', 'Scalable Cloud Environments'],
+    label: 'DevOps & Infrastructure',
+    tags: [
+      'Terraform', 'CI/CD', 'Docker', 'Infrastructure as Code',
+    ],
   },
   {
     label: 'Machine Learning',
-    tags: ['Predictive Models', 'Segmentation', 'Churn Prediction', 'LTV', 'Recommender Systems'],
+    tags: [
+      'Predictive Models', 'Customer Segmentation', 'Churn Prediction',
+      'LTV Modeling', 'Recommender Systems', 'Risk Classification',
+      'Odds Modeling', 'Behavioral Analytics',
+    ],
+  },
+  {
+    label: 'AI Agents & LLM',
+    tags: [
+      'LangGraph', 'CrewAI', 'Multi-Agent Orchestration',
+      'Agentic Workflows', 'RAG Pipelines', 'LLM Integration',
+      'Autonomous Decision Systems',
+    ],
   },
   {
     label: 'Data Governance',
-    tags: ['Data Governance', 'Security', 'Compliance', 'End-to-End Architecture'],
+    tags: ['Data Governance', 'Security & Compliance', 'Data Lineage', 'End-to-End Architecture', 'DR & BCP'],
+  },
+  {
+    label: 'Gambling Domain',
+    tags: ['Sportsbook', 'Casino', 'Virtual Games', 'Slots', 'Trading & Risk', 'Odds Management', 'Cash Out Systems'],
   },
   {
     label: 'Leadership',
-    tags: ['Team Building', 'Strategy', 'Roadmap', 'Stakeholder Management', 'Mentoring'],
+    tags: ['Team Building', 'Data Strategy', 'Roadmap Definition', 'Stakeholder Management', 'Mentoring'],
   },
 ]
 
@@ -55,13 +81,13 @@ export default function Skills() {
             Tech <span className="text-gradient">Stack</span>
           </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {categories.map((cat, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.06 }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:border-cyan-400/15 transition-colors"
               >
                 <h3 className="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-3">
