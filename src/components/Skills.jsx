@@ -81,7 +81,7 @@ const categories = [
     label: 'Data Engineering',
     icon: Database,
     color: '#22d3ee',
-    tags: ['Python', 'SQL', 'ETL / ELT', 'dbt', 'Data Modeling', 'Apache Spark', 'Kafka'],
+    tags: ['Python', 'SQL', 'ETL / ELT', 'Data Bricks', 'dbt', 'Data Modeling', 'Apache Spark', 'Kafka'],
   },
   {
     label: 'Analytics & BI',
