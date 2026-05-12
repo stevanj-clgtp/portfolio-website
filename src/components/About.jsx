@@ -35,17 +35,7 @@ export default function About() {
               </p>
               <p>
                 Currently supporting environments processing{' '}
-                <span className="text-slate-200 font-medium">billions of events daily</span>, while
-                building{' '}
-                <a
-                  href="https://cloudlines.rs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors"
-                >
-                  Cloudlines
-                </a>{' '}
-                — an AI Agents platform.
+                <span className="text-slate-200 font-medium">billions of events daily</span>.
               </p>
             </div>
 

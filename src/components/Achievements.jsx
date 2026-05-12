@@ -67,18 +67,6 @@ const categories = [
     iconColor: 'text-orange-400',
     items: [
       'Designed and implemented AI products for personalization, recommendation, and operational optimization using LangGraph and CrewAI agent frameworks.',
-      <>
-        Building{' '}
-        <a
-          href="https://cloudlines.rs"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-cyan-400 hover:text-cyan-300 transition-colors"
-        >
-          Cloudlines
-        </a>{' '}
-        — an AI Agents platform with multi-agent orchestration, intelligent data pipelines, and autonomous decision-making workflows.
-      </>,
     ],
   },
 ]

@@ -60,16 +60,6 @@ export default function Hero() {
         >
           15+ years in the global gambling industry — designing cloud-based data platforms,
           BI ecosystems, and AI-driven decision engines for high-volume environments.
-          Currently building{' '}
-          <a
-            href="https://cloudlines.rs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors"
-          >
-            Cloudlines
-          </a>{' '}
-          — an AI Agents platform.
         </motion.p>
 
         <motion.div

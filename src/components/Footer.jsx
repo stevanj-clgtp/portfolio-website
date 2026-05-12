@@ -1,4 +1,3 @@
-import { ExternalLink } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -8,18 +7,7 @@ export default function Footer() {
           <span className="font-mono text-cyan-400/60 font-semibold">SJ.</span>
           <span>Stevan Jovanović · Belgrade, Serbia</span>
         </div>
-        <div className="flex items-center gap-1">
-          Building{' '}
-          <a
-            href="https://cloudlines.rs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-cyan-400/70 hover:text-cyan-400 transition-colors inline-flex items-center gap-1 ml-1"
-          >
-            Cloudlines <ExternalLink size={11} />
-          </a>
-          <span className="ml-2">· {new Date().getFullYear()}</span>
-        </div>
+        <div>{new Date().getFullYear()}</div>
       </div>
     </footer>
   )
