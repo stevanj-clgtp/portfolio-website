@@ -11,7 +11,7 @@ const projects = [
     title: 'Data Lake',
     description:
       'Migrated from on-premise infrastructure to an AWS-based Data Lake, enabling scalable analytics, real-time processing, and ML experimentation across Sportsbook, Casino, Virtual Games, and Slot operations.',
-    tech: ['AWS EC2', 'AWS ECS', 'AWS DMS', 'AWS Lambda','AWS S3', 'AWS Glue', 'Redshift', 'Apache Spark', 'Java','Python','SQL'],
+    tech: ['CloudFormation','AWS EC2', 'AWS ECS', 'AWS DMS', 'AWS Lambda','AWS S3', 'AWS Glue', 'Redshift', 'Apache Spark', 'Java','Python','SQL'],
     icon: Database,
     color: 'from-cyan-400/10 to-cyan-400/5',
     border: 'border-cyan-400/20',
