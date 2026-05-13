@@ -10,7 +10,7 @@ const timeline = [
       {
         icon: GraduationCap,
         type: 'Education',
-        title: 'Bsc Computer Science',
+        title: 'BSc Computer Science',
         institution: 'University of London',
         href: 'https://www.london.ac.uk/study/courses/undergraduate/bsc-computer-science',
         color: 'text-blue-400',
