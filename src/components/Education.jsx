@@ -5,6 +5,22 @@ import { useInView } from '../hooks/useInView'
 // Grouped chronologically — newest first
 const timeline = [
   {
+    year: '2029',
+    items: [
+      {
+        icon: GraduationCap,
+        type: 'Education',
+        title: 'Bsc Computer Science',
+        institution: 'University of London',
+        href: 'https://www.london.ac.uk/study/courses/undergraduate/bsc-computer-science',
+        color: 'text-blue-400',
+        border: 'border-blue-400/20',
+        bg: 'bg-blue-400/5',
+        dot: 'bg-blue-400',
+      },
+    ],
+  },
+  {
     year: '2025',
     items: [
       {
