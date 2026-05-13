@@ -4,6 +4,7 @@ import { Database, Layers, Brain, Bot, ShoppingCart, X } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
 import DataLakeDiagram from './diagrams/DataLakeDiagram'
 import EcommerceDiagram from './diagrams/EcommerceDiagram'
+import AiAgentsDiagram from './diagrams/AiAgentsDiagram'
 
 const projects = [
   {
@@ -48,12 +49,13 @@ const projects = [
     title: 'AI Agents',
     description:
       'Designed and implemented multi-agent AI systems for personalization, recommendation, and operational optimization using LangGraph and CrewAI orchestration frameworks.',
-    tech: ['LangGraph', 'CrewAI', 'Python', 'FastAPI', 'OpenAI', 'LangChain'],
+    tech: ['LangGraph', 'CrewAI', 'Python', 'FastAPI', 'OpenAI', 'LangChain','Next.js', 'Amplify', 'Cognito','DynamoDB','Terraform'],
+    diagram: AiAgentsDiagram,
     icon: Bot,
-    color: 'from-orange-400/10 to-orange-400/5',
-    border: 'border-orange-400/20',
-    iconColor: 'text-orange-400',
-    tagColor: 'bg-orange-400/10 text-orange-300 border-orange-400/20',
+    color: 'from-pink-400/10 to-pink-400/5',
+    border: 'border-pink-400/20',
+    iconColor: 'text-pink-400',
+    tagColor: 'bg-pink-400/10 text-pink-300 border-pink-400/20',
   },
   {
     year: '2025',
