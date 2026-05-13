@@ -7,6 +7,11 @@
     scroll-behavior: smooth;
   }
 
+  * {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
   body {
     @apply bg-navy-950 text-slate-100 font-sans;
     background: radial-gradient(ellipse at top left, #0d1a35 0%, #020817 50%, #020817 100%);
