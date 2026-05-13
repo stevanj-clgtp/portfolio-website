@@ -6,7 +6,7 @@ const details = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'stevdzan099@gmail.com',
+    value: 'stevan@stevan-jovanovic.com',
     href: 'mailto:stevdzan099@gmail.com',
   },
   {
