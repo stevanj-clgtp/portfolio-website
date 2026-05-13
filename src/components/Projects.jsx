@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Database, Layers, Brain, Bot, ShoppingCart, X } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
+import DataLakeDiagram from './diagrams/DataLakeDiagram'
+import EcommerceDiagram from './diagrams/EcommerceDiagram'
 
 const projects = [
   {
@@ -9,12 +11,13 @@ const projects = [
     title: 'Data Lake',
     description:
       'Migrated from on-premise infrastructure to an AWS-based Data Lake, enabling scalable analytics, real-time processing, and ML experimentation across Sportsbook, Casino, Virtual Games, and Slot operations.',
-    tech: ['AWS S3', 'AWS Glue', 'Redshift', 'Apache Spark', 'Python', 'Airflow'],
+    tech: ['AWS EC2', 'AWS ECS', 'AWS DMS', 'AWS Lambda','AWS S3', 'AWS Glue', 'Redshift', 'Apache Spark', 'Java','Python','SQL'],
     icon: Database,
     color: 'from-cyan-400/10 to-cyan-400/5',
     border: 'border-cyan-400/20',
     iconColor: 'text-cyan-400',
     tagColor: 'bg-cyan-400/10 text-cyan-300 border-cyan-400/20',
+    diagram: DataLakeDiagram,
   },
   {
     year: '2025',
@@ -57,7 +60,8 @@ const projects = [
     title: 'Ecommerce App',
     description:
       'Full-stack ecommerce application with product catalog, cart management, payment processing, and real-time inventory tracking.',
-    tech: ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
+    tech: ['AWS Amplify', 'Next.js', 'Spring Boot', 'Kotlin', 'PostgreSQL', 'Terraform', 'Tailwind CSS', 'Python','Power BI'],
+    diagram: EcommerceDiagram,
     icon: ShoppingCart,
     color: 'from-green-400/10 to-green-400/5',
     border: 'border-green-400/20',
@@ -176,7 +180,7 @@ export default function Projects() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
-              className={`relative w-full max-w-2xl rounded-2xl border ${activeProject.border} bg-[#020817] p-8`}
+              className={`relative w-full ${activeProject.diagram ? 'max-w-4xl' : 'max-w-2xl'} rounded-2xl border ${activeProject.border} bg-[#020817] p-8 max-h-[90vh] overflow-y-auto`}
             >
               <button
                 onClick={() => setActiveProject(null)}
@@ -188,18 +192,24 @@ export default function Projects() {
               <div className={`${activeProject.iconColor} mb-3`}>
                 <activeProject.icon size={24} />
               </div>
-              <div className="flex items-baseline gap-3 mb-4">
+              <div className="flex items-baseline gap-3 mb-6">
                 <h3 className="text-xl font-bold text-white">{activeProject.title}</h3>
                 <span className={`font-mono text-xs ${activeProject.iconColor} opacity-60`}>
                   {activeProject.year}
                 </span>
               </div>
 
-              <div
-                className={`flex items-center justify-center rounded-xl border ${activeProject.border} bg-gradient-to-br ${activeProject.color} h-56`}
-              >
-                <p className="text-slate-500 text-sm font-mono">Architecture diagram coming soon</p>
-              </div>
+              {activeProject.diagram ? (
+                <div className="rounded-xl overflow-hidden border border-white/5 bg-[#080f1e] p-4">
+                  <activeProject.diagram />
+                </div>
+              ) : (
+                <div
+                  className={`flex items-center justify-center rounded-xl border ${activeProject.border} bg-gradient-to-br ${activeProject.color} h-56`}
+                >
+                  <p className="text-slate-500 text-sm font-mono">Architecture diagram coming soon</p>
+                </div>
+              )}
             </motion.div>
           </motion.div>
         )}
