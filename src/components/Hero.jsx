@@ -58,8 +58,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto mt-6 leading-relaxed"
         >
-          15+ years in the global gambling industry — designing cloud-based data platforms,
-          BI ecosystems, and AI-driven decision engines for high-volume environments.
+          15+ years in the global gambling industry. 10+ years designing cloud-based data platforms, BI ecosystems, and AI-driven decision engines, supporting environments that process billions of events daily.
         </motion.p>
 
         <motion.div
