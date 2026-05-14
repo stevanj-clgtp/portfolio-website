@@ -61,9 +61,7 @@ const jobs = [
       {
         title: 'Betshop Operator',
         period: 'Jan 2013 – Sep 2014',
-        bullets: [
-          'Operated Betting, Casino, and Virtual Games tickets for customers.',
-        ],
+        bullets: ['Operated Betting, Casino, and Virtual Games tickets for customers.'],
       },
     ],
   },
@@ -73,7 +71,7 @@ export default function Experience() {
   const [ref, inView] = useInView()
 
   return (
-    <section id="experience" className="py-28 px-6 bg-white/[0.01]">
+    <section id="experience" className="py-28 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
@@ -81,15 +79,15 @@ export default function Experience() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="font-mono text-cyan-400 text-sm tracking-widest uppercase">Career</span>
-          <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-12">
+          <span className="text-xs font-semibold tracking-widest uppercase text-blue-600">Career</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-12 text-slate-900">
             Professional <span className="text-gradient">Experience</span>
           </h2>
 
           <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-400/40 via-cyan-400/10 to-transparent hidden sm:block" />
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-blue-400/60 via-blue-200/40 to-transparent hidden sm:block" />
 
-            <div className="space-y-12">
+            <div className="space-y-10">
               {jobs.map((job, i) => (
                 <motion.div
                   key={i}
@@ -99,7 +97,7 @@ export default function Experience() {
                   className="sm:pl-16 relative"
                 >
                   <div className="hidden sm:flex absolute left-0 top-1 w-12 h-12 items-center justify-center">
-                    <div className="w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-400/10" />
+                    <div className="w-3 h-3 rounded-full bg-blue-600 ring-4 ring-blue-100" />
                   </div>
 
                   {'roles' in job ? (
@@ -119,31 +117,31 @@ export default function Experience() {
 
 function SingleRoleCard({ job }) {
   return (
-    <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-cyan-400/20 hover:bg-white/[0.04] transition-all glow">
+    <div className="p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:border-blue-200 hover:shadow-md transition-all">
       <div className="flex flex-wrap items-start justify-between gap-4 mb-1">
         <div>
-          <h3 className="text-lg font-bold text-white">{job.title}</h3>
+          <h3 className="text-lg font-bold text-slate-900">{job.title}</h3>
           {job.subtitle && (
-            <p className="text-sm text-cyan-400 font-medium mt-0.5">{job.subtitle}</p>
+            <p className="text-sm text-blue-600 font-medium mt-0.5">{job.subtitle}</p>
           )}
         </div>
-        <div className="flex items-center gap-1.5 text-slate-500 text-sm font-mono shrink-0">
+        <div className="flex items-center gap-1.5 text-slate-400 text-sm shrink-0">
           <Calendar size={13} />
           {job.period}
         </div>
       </div>
 
-      <div className="flex items-center gap-2 mb-4 text-sm text-slate-400">
-        <Briefcase size={13} className="text-cyan-400/70" />
-        <span className="font-medium text-slate-300">{job.company}</span>
-        <span className="text-slate-600">·</span>
+      <div className="flex items-center gap-2 mb-4 text-sm text-slate-500">
+        <Briefcase size={13} className="text-blue-500" />
+        <span className="font-medium text-slate-700">{job.company}</span>
+        <span className="text-slate-300">·</span>
         <span>{job.location}</span>
       </div>
 
       <ul className="space-y-2">
         {job.bullets.map((b, j) => (
-          <li key={j} className="flex gap-3 text-sm text-slate-400 leading-relaxed">
-            <span className="text-cyan-400 mt-1 shrink-0">›</span>
+          <li key={j} className="flex gap-3 text-sm text-slate-600 leading-relaxed">
+            <span className="text-blue-500 mt-1 shrink-0">›</span>
             {b}
           </li>
         ))}
@@ -154,37 +152,35 @@ function SingleRoleCard({ job }) {
 
 function MeridianCard({ job }) {
   return (
-    <div className="rounded-2xl border border-white/5 bg-white/[0.02] hover:border-cyan-400/20 transition-all overflow-hidden">
-      {/* Company header */}
-      <div className="px-6 py-4 border-b border-white/5 bg-white/[0.02] flex flex-wrap items-center justify-between gap-3">
+    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm hover:border-blue-200 transition-all overflow-hidden">
+      <div className="px-6 py-4 border-b border-slate-100 bg-slate-50 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <Briefcase size={14} className="text-cyan-400/70" />
-          <span className="font-semibold text-white">{job.company}</span>
-          <span className="text-xs font-mono text-cyan-400/60 px-2 py-0.5 rounded-full border border-cyan-400/15 bg-cyan-400/5">
+          <Briefcase size={14} className="text-blue-500" />
+          <span className="font-semibold text-slate-900">{job.company}</span>
+          <span className="text-xs font-semibold text-blue-600 bg-blue-50 border border-blue-200 rounded-full px-2.5 py-0.5">
             {job.tenure}
           </span>
         </div>
-        <div className="flex items-center gap-1.5 text-slate-500 text-sm font-mono">
+        <div className="flex items-center gap-1.5 text-slate-400 text-sm">
           <Calendar size={13} />
           {job.period}
         </div>
       </div>
 
-      {/* Roles */}
-      <div className="divide-y divide-white/[0.04]">
+      <div className="divide-y divide-slate-100">
         {job.roles.map((role, i) => (
           <div key={i} className="px-6 py-4">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
               <div className="flex items-center gap-2">
-                <ChevronRight size={13} className="text-cyan-400/60" />
-                <span className="text-sm font-semibold text-slate-200">{role.title}</span>
+                <ChevronRight size={13} className="text-blue-400" />
+                <span className="text-sm font-semibold text-slate-800">{role.title}</span>
               </div>
-              <span className="text-xs font-mono text-slate-500">{role.period}</span>
+              <span className="text-xs text-slate-400">{role.period}</span>
             </div>
             <ul className="space-y-1 pl-5">
               {role.bullets.map((b, j) => (
                 <li key={j} className="flex gap-2 text-xs text-slate-500 leading-relaxed">
-                  <span className="text-cyan-400/50 shrink-0 mt-0.5">›</span>
+                  <span className="text-blue-400 shrink-0 mt-0.5">›</span>
                   {b}
                 </li>
               ))}

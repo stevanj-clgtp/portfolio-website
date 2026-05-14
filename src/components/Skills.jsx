@@ -9,27 +9,25 @@ import {
 const SZ = 380
 const CX = SZ / 2
 const CY = SZ / 2
-const R = 115
-const LR = 150   // label radius
+const R  = 115
+const LR = 150
 const LEVELS = 4
 
-// Edit `years` to adjust each axis — value is derived automatically
 const radarData = [
-  { label: 'AWS Cloud',       years: 6.5  },
-  { label: 'Azure Cloud',       years: 2.5  },
-  { label: 'Data Eng.',   years: 6 },
-  { label: 'ML',          years: 3  },
-  { label: 'Analytics',   years: 8 },
-  { label: 'AI Agents',   years: 2  },
-  { label: 'DevOps',      years: 4  },
-  { label: 'Governance',  years: 6  },
-  { label: 'Orchestration',  years: 4  },
-  { label: 'Team Management',      years: 4 },
+  { label: 'AWS Cloud',        years: 6.5 },
+  { label: 'Azure Cloud',      years: 2.5 },
+  { label: 'Data Eng.',        years: 6   },
+  { label: 'ML',               years: 3   },
+  { label: 'Analytics',        years: 8   },
+  { label: 'AI Agents',        years: 2   },
+  { label: 'DevOps',           years: 4   },
+  { label: 'Governance',       years: 6   },
+  { label: 'Orchestration',    years: 4   },
+  { label: 'Team Management',  years: 4   },
 ]
 
 const MAX_YEARS = Math.max(...radarData.map(d => d.years))
 const radar = radarData.map(d => ({ ...d, value: d.years / MAX_YEARS }))
-
 const N = radar.length
 
 function ax(i) { return (Math.PI * 2 * i) / N - Math.PI / 2 }
@@ -65,79 +63,75 @@ function dy(i) {
 // ─── Skill categories ──────────────────────────────────────────
 const categories = [
   {
+    label: 'Leadership & Strategy',
+    icon: Users,
+    color: '#1d4ed8',
+    tags: ['Team Building','Data Strategy','Roadmap Definition','Stakeholder Management','Mentoring'],
+  },
+  {
     label: 'AWS Services',
     icon: Cloud,
     color: '#f97316',
-    tags: ['S3', 'Glue', 'Redshift', 'Kinesis', 'Lambda', 'Athena', 'EMR', 'AWS Cloudwatch', "AWS Amplify",
-      'Step Functions', 'RDS', 'DynamoDB', 'SageMaker', 'ECS', 'EKS','IAM', 'Identity Center', 'CloudWatch', 'SNS / SQS'],
+    tags: ['S3','Glue','Redshift','Kinesis','Lambda','Athena','EMR','AWS Amplify',
+      'Step Functions','RDS','DynamoDB','SageMaker','ECS','EKS','IAM','CloudWatch','SNS / SQS'],
   },
   {
     label: 'Azure',
     icon: Layers,
     color: '#3b82f6',
-    tags: ['Azure Data Factory', 'Synapse Analytics', 'Blob Storage', 'Azure SQL', 'Azure DevOps'],
+    tags: ['Azure Data Factory','Synapse Analytics','Blob Storage','Azure SQL','Azure DevOps'],
   },
   {
     label: 'Data Engineering',
     icon: Database,
-    color: '#22d3ee',
-    tags: ['Python', 'SQL', 'ETL / ELT', 'Data Bricks', 'dbt', 'Data Modeling', 'Apache Spark', 'Kafka'],
+    color: '#06b6d4',
+    tags: ['Python','SQL','ETL / ELT','Databricks','dbt','Data Modeling','Apache Spark','Kafka'],
   },
   {
     label: 'Analytics & BI',
     icon: BarChart2,
-    color: '#a78bfa',
-    tags: ['Power BI', 'SSRS', 'Executive Dashboards', 'KPI Design', "RLS/OLS", 'DAX', 'Data Visualization'],
+    color: '#8b5cf6',
+    tags: ['Power BI','SSRS','Executive Dashboards','KPI Design','RLS/OLS','DAX','Data Visualization'],
   },
   {
     label: 'Orchestration',
     icon: GitBranch,
-    color: '#34d399',
-    tags: ['Apache Airflow', 'Batch Processing', 'Real-Time Processing', 'Event-Driven Pipelines'],
+    color: '#10b981',
+    tags: ['Apache Airflow','Batch Processing','Real-Time Processing','Event-Driven Pipelines'],
   },
   {
     label: 'DevOps & Infrastructure',
     icon: Terminal,
-    color: '#facc15',
-    tags: ['Terraform', 'CI/CD', 'Docker', 'ECS Tasks', 'EKS Cron Jobs',
-      'GitHub Actions', 'AWS CDK', 'Infrastructure as Code'],
+    color: '#eab308',
+    tags: ['Terraform','CI/CD','Docker','ECS Tasks','EKS Cron Jobs','GitHub Actions','AWS CDK','IaC'],
   },
   {
     label: 'Machine Learning',
     icon: Brain,
-    color: '#f472b6',
-    tags: ['Predictive Models', 'Customer Segmentation', 'Churn Prediction',
-      'LTV Modeling', 'Recommender Systems', 'Risk Classification',
-      'Odds Modeling', 'Behavioral Analytics'],
+    color: '#ec4899',
+    tags: ['Predictive Models','Customer Segmentation','Churn Prediction',
+      'LTV Modeling','Recommender Systems','Risk Classification','Odds Modeling'],
   },
   {
     label: 'AI Agents & LLM',
     icon: Bot,
-    color: '#818cf8',
-    tags: ['LangGraph', 'CrewAI', 'Multi-Agent Orchestration',
-      'Agentic Workflows', 'RAG Pipelines', 'LLM Integration',
-      'Autonomous Decision Systems'],
+    color: '#6366f1',
+    tags: ['LangGraph','CrewAI','Multi-Agent Orchestration',
+      'Agentic Workflows','RAG Pipelines','LLM Integration'],
   },
   {
     label: 'Data Governance',
     icon: Shield,
-    color: '#2dd4bf',
-    tags: ['Data Governance', 'Security & Compliance', 'Data Lineage',
-      'End-to-End Architecture', 'DR & BCP'],
+    color: '#14b8a6',
+    tags: ['Data Governance','Security & Compliance','Data Lineage',
+      'End-to-End Architecture','DR & BCP'],
   },
   {
     label: 'Gambling Domain',
     icon: Trophy,
-    color: '#fb923c',
-    tags: ['Sportsbook', 'Casino', 'Virtual Games', 'Slots',
-      'Trading & Risk', 'Odds Management', 'Cash Out Systems'],
-  },
-  {
-    label: 'Leadership',
-    icon: Users,
-    color: '#94a3b8',
-    tags: ['Team Building', 'Data Strategy', 'Roadmap Definition',
-      'Stakeholder Management', 'Mentoring'],
+    color: '#f97316',
+    tags: ['Sportsbook','Casino','Virtual Games','Slots',
+      'Trading & Risk','Odds Management','Cash Out Systems'],
   },
 ]
 
@@ -146,7 +140,7 @@ export default function Skills() {
   const [ref, inView] = useInView()
 
   return (
-    <section id="skills" className="py-28 px-6 bg-white/[0.01]">
+    <section id="skills" className="py-28 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -154,11 +148,11 @@ export default function Skills() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="font-mono text-cyan-400 text-sm tracking-widest uppercase">
+          <span className="text-xs font-semibold tracking-widest uppercase text-blue-600">
             Capabilities
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-14">
-            Tech <span className="text-gradient">Stack</span>
+          <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-14 text-slate-900">
+            Areas of <span className="text-gradient">Expertise</span>
           </h2>
 
           {/* ── Radar chart ── */}
@@ -168,7 +162,7 @@ export default function Skills() {
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative rounded-2xl border border-white/5 bg-white/[0.02] p-4 overflow-visible"
+                className="relative rounded-2xl border border-slate-200 bg-white shadow-sm p-4 overflow-visible"
               >
                 <svg
                   viewBox={`-60 -15 ${SZ + 75} ${SZ + 30}`}
@@ -177,11 +171,11 @@ export default function Skills() {
                 >
                   <defs>
                     <radialGradient id="radarFill" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.25" />
-                      <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.08" />
+                      <stop offset="0%" stopColor="#2563eb" stopOpacity="0.20" />
+                      <stop offset="100%" stopColor="#1d4ed8" stopOpacity="0.06" />
                     </radialGradient>
                     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="3" result="blur" />
+                      <feGaussianBlur stdDeviation="2" result="blur" />
                       <feMerge>
                         <feMergeNode in="blur" />
                         <feMergeNode in="SourceGraphic" />
@@ -189,42 +183,31 @@ export default function Skills() {
                     </filter>
                   </defs>
 
-                  {/* Grid rings */}
                   {rings.map((d, i) => (
                     <motion.path
-                      key={i}
-                      d={d}
-                      fill="none"
-                      stroke="rgba(255,255,255,0.05)"
-                      strokeWidth="1"
-                      strokeDasharray="3 4"
+                      key={i} d={d} fill="none"
+                      stroke="rgba(0,0,0,0.06)" strokeWidth="1" strokeDasharray="3 4"
                       initial={{ opacity: 0 }}
                       animate={inView ? { opacity: 1 } : {}}
                       transition={{ delay: 0.1 * i, duration: 0.4 }}
                     />
                   ))}
 
-                  {/* Axis lines */}
                   {axes.map((a, i) => (
                     <motion.line
                       key={i}
-                      x1={a.from.x}
-                      y1={a.from.y}
-                      x2={a.to.x}
-                      y2={a.to.y}
-                      stroke="rgba(255,255,255,0.06)"
-                      strokeWidth="1"
+                      x1={a.from.x} y1={a.from.y} x2={a.to.x} y2={a.to.y}
+                      stroke="rgba(0,0,0,0.06)" strokeWidth="1"
                       initial={{ opacity: 0 }}
                       animate={inView ? { opacity: 1 } : {}}
                       transition={{ delay: 0.3, duration: 0.4 }}
                     />
                   ))}
 
-                  {/* Data polygon */}
                   <motion.path
                     d={dataPoly}
                     fill="url(#radarFill)"
-                    stroke="rgba(34,211,238,0.7)"
+                    stroke="rgba(37,99,235,0.65)"
                     strokeWidth="1.5"
                     filter="url(#glow)"
                     initial={{ opacity: 0, scale: 0.3 }}
@@ -233,17 +216,13 @@ export default function Skills() {
                     style={{ transformOrigin: `${CX}px ${CY}px` }}
                   />
 
-                  {/* Ring year labels (bottom-right axis) */}
                   {ringLabels.map((yr, l) => {
                     const p = pt((l + 1) / LEVELS, 2)
                     return (
                       <motion.text
-                        key={l}
-                        x={p.x + 4}
-                        y={p.y}
-                        fill="rgba(100,116,139,0.7)"
-                        fontSize="9"
-                        fontFamily="JetBrains Mono, monospace"
+                        key={l} x={p.x + 4} y={p.y}
+                        fill="#94a3b8" fontSize="9"
+                        fontFamily="Inter, sans-serif"
                         initial={{ opacity: 0 }}
                         animate={inView ? { opacity: 1 } : {}}
                         transition={{ delay: 0.3, duration: 0.4 }}
@@ -253,17 +232,12 @@ export default function Skills() {
                     )
                   })}
 
-                  {/* Data point dots */}
                   {radar.map((d, i) => {
                     const p = pt(d.value, i)
                     return (
                       <motion.circle
-                        key={i}
-                        cx={p.x}
-                        cy={p.y}
-                        r={4}
-                        fill="#22d3ee"
-                        filter="url(#glow)"
+                        key={i} cx={p.x} cy={p.y} r={4}
+                        fill="#2563eb" filter="url(#glow)"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ delay: 0.7 + i * 0.05, duration: 0.3 }}
@@ -272,20 +246,14 @@ export default function Skills() {
                     )
                   })}
 
-                  {/* Labels */}
                   {radar.map((d, i) => {
                     const lp = pt(1, i, LR)
                     return (
                       <motion.text
-                        key={i}
-                        x={lp.x}
-                        y={lp.y}
-                        dy={dy(i)}
+                        key={i} x={lp.x} y={lp.y} dy={dy(i)}
                         textAnchor={anchor(i)}
-                        fill="rgba(148,163,184,0.9)"
-                        fontSize="11"
-                        fontFamily="Inter, sans-serif"
-                        fontWeight="500"
+                        fill="#334155" fontSize="11"
+                        fontFamily="Inter, sans-serif" fontWeight="500"
                         initial={{ opacity: 0 }}
                         animate={inView ? { opacity: 1 } : {}}
                         transition={{ delay: 0.9 + i * 0.04, duration: 0.3 }}
@@ -298,7 +266,7 @@ export default function Skills() {
               </motion.div>
             </div>
 
-            {/* Legend / radar description */}
+            {/* Legend bars */}
             <div className="flex-1 grid grid-cols-2 gap-3">
               {radar.map((d, i) => (
                 <motion.div
@@ -308,18 +276,18 @@ export default function Skills() {
                   transition={{ delay: 0.4 + i * 0.06, duration: 0.4 }}
                   className="flex items-center gap-3"
                 >
-                  <div className="text-xs font-mono text-cyan-400/80 w-8 text-right shrink-0 tabular-nums">
+                  <div className="text-xs font-semibold text-blue-600 w-8 text-right shrink-0 tabular-nums">
                     {d.years}yr
                   </div>
-                  <div className="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                  <div className="flex-1 h-1.5 rounded-full bg-slate-100 overflow-hidden">
                     <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500"
+                      className="h-full rounded-full bg-gradient-to-r from-blue-500 to-blue-700"
                       initial={{ width: 0 }}
                       animate={inView ? { width: `${d.value * 100}%` } : {}}
                       transition={{ delay: 0.5 + i * 0.06, duration: 0.6, ease: 'easeOut' }}
                     />
                   </div>
-                  <div className="text-xs text-slate-400 w-20 shrink-0">{d.label}</div>
+                  <div className="text-xs text-slate-500 w-20 shrink-0">{d.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -335,33 +303,25 @@ export default function Skills() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.45, delay: 0.1 + i * 0.045 }}
-                  className="relative overflow-hidden rounded-xl border border-white/5 bg-white/[0.02] p-5 hover:bg-white/[0.04] transition-colors group"
-                  style={{ borderTop: `2px solid ${cat.color}30` }}
+                  className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 hover:shadow-md hover:-translate-y-0.5 transition-all group"
+                  style={{ borderTop: `2px solid ${cat.color}` }}
                 >
-                  {/* Watermark icon */}
                   <Icon
-                    size={72}
-                    className="absolute -bottom-3 -right-3 opacity-[0.04] group-hover:opacity-[0.07] transition-opacity"
+                    size={64}
+                    className="absolute -bottom-2 -right-2 opacity-[0.05] group-hover:opacity-[0.09] transition-opacity"
                     style={{ color: cat.color }}
                   />
-
-                  {/* Header */}
                   <div className="flex items-center gap-2 mb-3">
                     <Icon size={14} style={{ color: cat.color }} />
-                    <h3
-                      className="text-xs font-mono tracking-widest uppercase font-semibold"
-                      style={{ color: cat.color }}
-                    >
+                    <h3 className="text-xs tracking-widest uppercase font-semibold" style={{ color: cat.color }}>
                       {cat.label}
                     </h3>
                   </div>
-
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-1.5">
                     {cat.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-0.5 text-[11px] rounded-md text-slate-400 border border-white/5 bg-white/[0.03] hover:text-slate-200 transition-colors"
+                        className="px-2 py-0.5 text-[11px] rounded-md text-slate-600 border border-slate-200 bg-slate-50 hover:text-slate-900 transition-colors"
                       >
                         {tag}
                       </span>

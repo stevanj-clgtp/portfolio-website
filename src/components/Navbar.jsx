@@ -4,12 +4,12 @@ import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const links = [
-  { to: 'about', label: 'About' },
+  { to: 'about',      label: 'About' },
   { to: 'experience', label: 'Experience' },
-  { to: 'projects', label: 'Projects' },
-  { to: 'skills', label: 'Skills' },
-  { to: 'education', label: 'Education' },
-  { to: 'contact', label: 'Contact' },
+  { to: 'projects',   label: 'Initiatives' },
+  { to: 'skills',     label: 'Expertise' },
+  { to: 'education',  label: 'Credentials' },
+  { to: 'contact',    label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass border-b border-white/5 shadow-lg' : 'bg-transparent'
+        scrolled ? 'glass border-b border-slate-200 shadow-sm' : 'bg-transparent'
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -33,9 +33,9 @@ export default function Navbar() {
           to="hero"
           smooth
           duration={600}
-          className="cursor-pointer font-mono text-cyan-400 font-semibold text-lg tracking-wide hover:text-white transition-colors"
+          className="cursor-pointer font-bold text-blue-700 text-lg tracking-tight hover:text-blue-800 transition-colors"
         >
-          SJ<span className="text-white">.</span>
+          SJ.
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -46,8 +46,8 @@ export default function Navbar() {
                 smooth
                 duration={600}
                 offset={-64}
-                className="text-sm text-slate-400 hover:text-cyan-400 transition-colors cursor-pointer font-medium tracking-wide"
-                activeClass="text-cyan-400"
+                className="text-sm text-slate-600 hover:text-blue-700 transition-colors cursor-pointer font-medium"
+                activeClass="text-blue-700"
                 spy
               >
                 {label}
@@ -57,7 +57,7 @@ export default function Navbar() {
         </ul>
 
         <button
-          className="md:hidden text-slate-400 hover:text-white transition-colors"
+          className="md:hidden text-slate-600 hover:text-slate-900 transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -71,7 +71,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-b border-white/5"
+            className="md:hidden glass border-b border-slate-200"
           >
             <ul className="px-6 py-4 flex flex-col gap-4">
               {links.map(({ to, label }) => (
@@ -82,7 +82,7 @@ export default function Navbar() {
                     duration={600}
                     offset={-64}
                     onClick={() => setOpen(false)}
-                    className="block text-sm text-slate-400 hover:text-cyan-400 transition-colors cursor-pointer font-medium py-1"
+                    className="block text-sm text-slate-600 hover:text-blue-700 transition-colors cursor-pointer font-medium py-1"
                   >
                     {label}
                   </Link>

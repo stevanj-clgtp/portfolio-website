@@ -1,78 +1,107 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
-import { ChevronDown, MapPin, ExternalLink } from 'lucide-react'
+import { MapPin, ExternalLink, ChevronDown } from 'lucide-react'
+
+const metrics = [
+  { value: '15+', label: 'Years in Gambling Industry' },
+  { value: '1B+', label: 'Events Processed Daily' },
+  { value: '15+', label: 'Data Team Members Led' },
+  { value: '3×',  label: 'AWS Certified' },
+]
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 bg-white overflow-hidden"
     >
-      {/* Background grid */}
+      {/* Top accent bar */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-blue-800" />
+
+      {/* Subtle dot grid */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.025]"
         style={{
-          backgroundImage: `linear-gradient(rgba(34,211,238,1) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,1) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
+          backgroundImage: `radial-gradient(circle, #1d4ed8 1px, transparent 1px)`,
+          backgroundSize: '36px 36px',
         }}
       />
 
-      {/* Ambient glow blobs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient glow */}
+      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 text-center max-w-4xl">
+      <div className="relative z-10 max-w-4xl w-full text-center">
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-400 text-sm font-mono mb-8"
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-blue-700 text-xs font-semibold tracking-wide mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse-slow" />
-          <MapPin size={13} />
+          <MapPin size={11} />
           Belgrade, Serbia
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-tight mb-4 tracking-tight"
         >
           Stevan{' '}
-          <span className="text-gradient glow-text">Jovanović</span>
+          <span className="text-gradient">Jovanović</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-xl sm:text-2xl text-slate-400 font-light mb-2"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-xl sm:text-2xl text-blue-700 font-semibold mb-5 tracking-tight"
         >
-          Head of Data &nbsp;·&nbsp; Data Platform Architect &nbsp;·&nbsp; AI Solutions Leader
+          Head of Data & AI
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto mt-6 leading-relaxed"
+          transition={{ duration: 0.6, delay: 0.32 }}
+          className="text-slate-500 text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          15+ years in the global gambling industry. 10+ years designing cloud-based data platforms, BI ecosystems, and AI-driven decision engines, supporting environments that process billions of events daily.
+          Building enterprise data platforms and AI systems that transform raw data into
+          measurable competitive advantage — across Sportsbook, Casino, and Virtual Games operations.
         </motion.p>
 
+        {/* Impact metrics */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.55 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
+          transition={{ duration: 0.6, delay: 0.44 }}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12 max-w-2xl mx-auto"
+        >
+          {metrics.map(({ value, label }) => (
+            <div
+              key={label}
+              className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-blue-200 hover:shadow-md transition-all"
+            >
+              <div className="text-2xl sm:text-3xl font-extrabold text-blue-700 mb-1">{value}</div>
+              <div className="text-xs text-slate-500 leading-snug">{label}</div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.56 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <Link
             to="contact"
             smooth
             duration={700}
             offset={-64}
-            className="px-7 py-3 bg-cyan-400 text-navy-950 font-semibold rounded-lg cursor-pointer hover:bg-cyan-300 transition-colors text-sm tracking-wide"
+            className="px-7 py-3 bg-blue-700 text-white font-semibold rounded-lg cursor-pointer hover:bg-blue-800 transition-colors text-sm shadow-sm"
           >
             Get in Touch
           </Link>
@@ -81,7 +110,7 @@ export default function Hero() {
             smooth
             duration={700}
             offset={-64}
-            className="px-7 py-3 border border-white/10 text-slate-300 font-medium rounded-lg cursor-pointer hover:border-cyan-400/40 hover:text-white transition-all text-sm tracking-wide"
+            className="px-7 py-3 border border-slate-300 text-slate-700 font-medium rounded-lg cursor-pointer hover:border-blue-400 hover:text-blue-700 transition-all text-sm"
           >
             View Experience
           </Link>
@@ -89,7 +118,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/stevan-jovanovic-86a2a3203/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3 border border-white/10 text-slate-300 font-medium rounded-lg hover:border-cyan-400/40 hover:text-white transition-all text-sm tracking-wide"
+            className="inline-flex items-center gap-2 px-7 py-3 border border-slate-300 text-slate-700 font-medium rounded-lg hover:border-blue-400 hover:text-blue-700 transition-all text-sm"
           >
             LinkedIn <ExternalLink size={13} />
           </a>
@@ -103,7 +132,7 @@ export default function Hero() {
         className="absolute bottom-10"
       >
         <Link to="about" smooth duration={600} offset={-64} className="cursor-pointer">
-          <ChevronDown size={24} className="text-slate-600 animate-bounce" />
+          <ChevronDown size={22} className="text-slate-300 animate-bounce" />
         </Link>
       </motion.div>
     </section>

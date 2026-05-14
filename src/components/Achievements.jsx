@@ -6,9 +6,9 @@ const categories = [
   {
     icon: Database,
     title: 'Data Platform & Architecture',
-    color: 'from-cyan-400/10 to-cyan-400/5',
-    border: 'border-cyan-400/20',
-    iconColor: 'text-cyan-400',
+    color: 'from-violet-400/10 to-violet-400/5',
+    border: 'border-violet-400/20',
+    iconColor: 'text-violet-400',
     items: [
       'Led migration from on-premise infrastructure to AWS-based Data Lake, enabling scalable analytics, real-time processing, and ML experimentation across Sportsbook, Casino, Virtual Games, and Slot operations.',
       'Built centralized Sportsbook Data Warehouse & Analytics Platform — unified analytical data structures supporting large-scale reporting, advanced analytics, and AI-driven use cases across trading, risk, and operational teams.',
@@ -83,7 +83,7 @@ export default function Achievements() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="font-mono text-cyan-400 text-sm tracking-widest uppercase">Impact</span>
+          <span className="font-mono text-violet-400 text-sm tracking-widest uppercase">Impact</span>
           <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-12">
             Key <span className="text-gradient">Achievements</span>
           </h2>

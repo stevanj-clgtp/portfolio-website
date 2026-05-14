@@ -33,7 +33,7 @@ export default function Contact() {
   const [ref, inView] = useInView()
 
   return (
-    <section id="contact" className="py-28 px-6 bg-white/[0.01]">
+    <section id="contact" className="py-28 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
@@ -41,15 +41,15 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="font-mono text-cyan-400 text-sm tracking-widest uppercase">
+          <span className="text-xs font-semibold tracking-widest uppercase text-blue-600">
             Reach Out
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-4 text-slate-900">
             Get in <span className="text-gradient">Touch</span>
           </h2>
-          <p className="text-slate-400 mb-12 max-w-xl leading-relaxed">
+          <p className="text-slate-500 mb-12 max-w-xl leading-relaxed">
             Open to interesting conversations about data platform architecture, AI product
-            development, or advisory opportunities.
+            development, or leadership opportunities.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
@@ -65,13 +65,13 @@ export default function Contact() {
                     href={href}
                     target={href.startsWith('http') ? '_blank' : undefined}
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:border-cyan-400/25 hover:bg-white/[0.04] transition-all group"
+                    className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 bg-white shadow-sm hover:border-blue-300 hover:shadow-md transition-all group"
                   >
                     <ContactIcon Icon={Icon} />
                     <ContactText label={label} value={value} linked />
                   </a>
                 ) : (
-                  <div className="flex items-center gap-4 p-5 rounded-xl border border-white/5 bg-white/[0.02]">
+                  <div className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 bg-white shadow-sm">
                     <ContactIcon Icon={Icon} />
                     <ContactText label={label} value={value} />
                   </div>
@@ -87,8 +87,8 @@ export default function Contact() {
 
 function ContactIcon({ Icon }) {
   return (
-    <div className="w-10 h-10 rounded-lg bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center shrink-0">
-      <Icon size={16} className="text-cyan-400" />
+    <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0">
+      <Icon size={16} className="text-blue-600" />
     </div>
   )
 }
@@ -96,8 +96,8 @@ function ContactIcon({ Icon }) {
 function ContactText({ label, value, linked }) {
   return (
     <div>
-      <div className="text-xs text-slate-500 uppercase tracking-wider mb-0.5">{label}</div>
-      <div className={`text-sm font-medium ${linked ? 'text-slate-200 group-hover:text-cyan-400 transition-colors' : 'text-slate-200'}`}>
+      <div className="text-xs text-slate-400 uppercase tracking-wider mb-0.5 font-medium">{label}</div>
+      <div className={`text-sm font-medium ${linked ? 'text-slate-700 group-hover:text-blue-700 transition-colors' : 'text-slate-700'}`}>
         {value}
       </div>
     </div>
