@@ -15,7 +15,7 @@ const jobs = [
       'Build real-time decision engines and ML models for player personalization, risk classification, and betting optimization.',
       'Design low-latency data flows and predictive models that directly inform product and trading decisions.',
       'Build and maintain the platform foundation, pipelines, dbt, Airflow, and cloud infrastructure (Terraform, AWS), that everything above runs on.',
-      'Lead BI and reporting infrastructure (Power BI and Tableau) enabling product and commercial teams to move faster.',
+      'Lead BI and reporting infrastructure (Power BI and Tableau) enabling product and commercial teams',
       'Set data governance, security, and compliance standards across all product data domains.'
     ],
   },
