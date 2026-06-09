@@ -6,6 +6,7 @@ const jobs = [
   {
     title: 'Lead Data Platform Architect',
     subtitle: 'Senior BI Developer',
+    domains: 'AWS · Python · dbt · Airflow · Terraform · Power BI · Tableau',
     company: 'ARRISE powering Pragmatic Play',
     period: 'Jan 2024 – Present',
     location: 'Belgrade, Serbia',
@@ -21,6 +22,7 @@ const jobs = [
   {
     title: 'Head of Data',
     subtitle: 'Data Science, Data Engineering, Data Analytics',
+    domains: 'AWS · Azure · Python · Data Lake · DWH · ETL · ML',
     company: 'Maxbet',
     period: 'Jan 2020 – Dec 2023',
     location: 'Belgrade, Serbia',
@@ -40,6 +42,7 @@ const jobs = [
       {
         title: 'Virtual Games Manager',
         period: 'Feb 2019 – Dec 2019',
+        domains: 'Mathematics · Betting Models · Market Analysis',
         bullets: [
           'Developed mathematics and betting models for new virtual games and bet types.',
           'Conducted Virtual Games market analysis and competitive benchmarking.',
@@ -48,6 +51,7 @@ const jobs = [
       {
         title: 'Sportsbook Trader',
         period: 'Aug 2016 – Dec 2019',
+        domains: 'Risk Management · Predictive Analysis · Clustering & Segmentation',
         bullets: [
           'Created and managed prematch betting offer across multiple markets and sports.',
           'Performed risk management for matches in the active offer.',
@@ -57,6 +61,7 @@ const jobs = [
       {
         title: 'Live Betting Operator',
         period: 'Oct 2014 – Jul 2016',
+        domains: 'Live Betting · Risk Management',
         bullets: [
           'Created and managed live betting offer in real time.',
           'Performed risk management for live matches in the active offer.',
@@ -65,6 +70,7 @@ const jobs = [
       {
         title: 'Betshop Operator',
         period: 'Jan 2013 – Sep 2014',
+        domains: 'Betting · Casino · Virtual Games',
         bullets: ['Operated Betting, Casino, and Virtual Games tickets for customers.'],
       },
     ],
@@ -128,6 +134,9 @@ function SingleRoleCard({ job }) {
           {job.subtitle && (
             <p className="text-sm text-blue-600 font-medium mt-0.5">{job.subtitle}</p>
           )}
+          {job.domains && (
+            <p className="text-xs text-slate-400 font-medium mt-0.5 tracking-wide">{job.domains}</p>
+          )}
         </div>
         <div className="flex items-center gap-1.5 text-slate-400 text-sm shrink-0">
           <Calendar size={13} />
@@ -174,13 +183,16 @@ function MeridianCard({ job }) {
       <div className="divide-y divide-slate-100">
         {job.roles.map((role, i) => (
           <div key={i} className="px-6 py-4">
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
               <div className="flex items-center gap-2">
                 <ChevronRight size={13} className="text-blue-400" />
                 <span className="text-sm font-semibold text-slate-800">{role.title}</span>
               </div>
               <span className="text-xs text-slate-400">{role.period}</span>
             </div>
+            {role.domains && (
+              <p className="text-xs text-slate-400 font-medium mb-2 pl-5 tracking-wide">{role.domains}</p>
+            )}
             <ul className="space-y-1 pl-5">
               {role.bullets.map((b, j) => (
                 <li key={j} className="flex gap-2 text-xs text-slate-500 leading-relaxed">
