@@ -6,7 +6,7 @@ const jobs = [
   {
     title: 'Lead Data Platform Architect',
     subtitle: 'Senior BI Developer',
-    domains: 'AWS · Python · dbt · Airflow · Terraform · Power BI · Tableau',
+    domains: 'AWS & Azure · Python · ML · dbt · Airflow · Terraform · Power BI · Tableau · SQL · LangChain · Sportsbook · Casino · Slots',
     company: 'ARRISE powering Pragmatic Play',
     period: 'Jan 2024 – Present',
     location: 'Belgrade, Serbia',
@@ -22,7 +22,7 @@ const jobs = [
   {
     title: 'Head of Data',
     subtitle: 'Data Science, Data Engineering, Data Analytics',
-    domains: 'AWS · Azure · Python · Data Lake · DWH · ETL · ML',
+    domains: 'AWS & Azure · Python · ML · Power BI · SQL · Sportsbook · Casino · Slots',
     company: 'Maxbet',
     period: 'Jan 2020 – Dec 2023',
     location: 'Belgrade, Serbia',
