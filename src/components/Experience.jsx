@@ -10,9 +10,12 @@ const jobs = [
     period: 'Jan 2024 – Present',
     location: 'Belgrade, Serbia',
     bullets: [
-      'Lead design and implementation of data platform and analytics systems supporting real-time decision-making across Sportsbook, Casino, and Slots verticals.',
-      'Design scalable data flows, models, and cloud services for low-latency sports betting analytics and ML-driven use cases.',
-      'Drive governance, security, and engineering excellence while mentoring BI team members and improving delivery practices.',
+      'Architect end-to-end data platforms on AWS powering Casino and Sportsbook analytics at scale.',
+      'Build real-time decision engines and ML models for player personalization, risk classification, and betting optimization.',
+      'Design low-latency data flows and predictive models that directly inform product and trading decisions.',
+      'Build and maintain the platform foundation, pipelines, dbt, Airflow, and cloud infrastructure (Terraform, AWS), that everything above runs on.',
+      'Lead BI and reporting infrastructure (Power BI and Tableau) enabling product and commercial teams to move faster.',
+      'Set data governance, security, and compliance standards across all product data domains.'
     ],
   },
   {
