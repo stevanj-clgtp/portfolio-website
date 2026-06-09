@@ -20,6 +20,7 @@ const jobs = [
   },
   {
     title: 'Head of Data',
+    subtitle: 'Data Science, Data Engineering, Data Analytics',
     company: 'Maxbet',
     period: 'Jan 2020 – Dec 2023',
     location: 'Belgrade, Serbia',
